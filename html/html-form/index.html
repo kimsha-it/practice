@@ -28,8 +28,10 @@
     <hr />
 
     <h1>숙소 예약 정보 작성 폼</h1>
-    <h2>숙소 예약하기</h2>
     <form action="#">
+    <h2>숙소 예약하기</h2>
+    <!-- label 태그 안에 input 태그를 삽입하면 자동으로 -->
+     <!-- label의 for 속성을 사용하지 않아도-->
       <div>
         <label for="체크인">체크인:</label>
         <input type="date" name="chin" id="체크인" />
@@ -40,25 +42,29 @@
         <label for="성인">성인:</label>
         <input type="number" name="adult" id="성인" />
         <br />
-        <label for="어린이">어린이:</label>
-        <input type="number" name="child" id="어린이" />
-      </div>
+        <label>
+        어린이:
+        <input type="number" min="0" max="10" value="1" />
+        </label>
+        <!-- 이런 식으로 label 안에 넣을 수 있다.-->
       <div>
         <p>선호 객실 타입</p>
-        <input type="radio" name="type" id="스탠다드" />
+        <input type="radio" name="type" id="스탠다드" value="s" />
         <label for="스탠다드">스탠다드</label>
-        <input type="radio" name="type" id="디럭스" />
+        <input type="radio" name="type" id="디럭스" value="d" />
         <label for="디럭스">디럭스</label>
-        <input type="radio" name="type" id="스위트" />
+        <input type="radio" name="type" id="스위트" value="sw" />
         <label for="스위트">스위트</label>
       </div>
       <div>
-        <label for="요청">요청사항</label>
-        <textarea
-          name="request"
-          id="요청"
+        <label>
+          요청사항
+          <textarea
           placeholder="특별히 요청하고 싶은 내용을 적어주세요."
+          rows="10" 
+          cols="20"
         ></textarea>
+        </label>
         <br />
         <button>예약하기</button>
       </div>
