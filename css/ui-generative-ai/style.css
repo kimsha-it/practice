@@ -1,0 +1,359 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Updated color palette to warm vintage tones */
+  --background: #ffffff; /* Soft white */
+  --foreground: #8b6a4b; /* Earthy brown */
+  --card: #f5f0e1; /* Muted cream */
+  --card-foreground: #8b6a4b; /* Earthy brown */
+  --popover: #d8c8b0; /* Soft beige */
+  --popover-foreground: #8b6a4b; /* Earthy brown */
+  --primary: #d8c8b0; /* Soft beige */
+  --primary-foreground: #8b6a4b; /* Earthy brown */
+  --secondary: #c7b2a0; /* Warm taupe */
+  --secondary-foreground: #8b6a4b; /* Earthy brown */
+  --muted: #f5f0e1; /* Muted cream */
+  --muted-foreground: #8b6a4b; /* Earthy brown */
+  --accent: #c7b2a0; /* Warm taupe */
+  --accent-foreground: #8b6a4b; /* Earthy brown */
+  --destructive: #d9534f; /* Red for destructive actions */
+  --destructive-foreground: #ffffff; /* White text */
+  --border: #e0d5c4; /* Light border */
+  --input: #ffffff; /* Input background */
+  --ring: #d8c8b0; /* Ring color */
+  --chart-1: #d8c8b0;
+  --chart-2: #c7b2a0;
+  --chart-3: #8b6a4b;
+  --chart-4: #f5f0e1;
+  --chart-5: #ffffff;
+  --radius: 0.5rem; /* Softer rounded corners */
+  --sidebar: #f5f0e1;
+  --sidebar-foreground: #8b6a4b;
+  --sidebar-primary: #d8c8b0;
+  --sidebar-primary-foreground: #8b6a4b;
+  --sidebar-accent: #c7b2a0;
+  --sidebar-accent-foreground: #8b6a4b;
+  --sidebar-border: #e0d5c4;
+  --sidebar-ring: #d8c8b0;
+}
+
+@layer base {
+  body {
+    /* vintage beige dot pattern background */
+    background-image: radial-gradient(
+      circle at 3px 3px,
+      rgba(216, 200, 176, 0.3) 1px,
+      transparent 0
+    );
+    background-size: 24px 24px;
+  }
+
+  /* Added vintage serif font class */
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+/* Added Google Fonts import for Playfair Display */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header Styles */
+.header {
+  background-color: var(--card);
+  border-bottom: 2px solid var(--border);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: var(--foreground);
+}
+
+/* Main Content */
+.main {
+  padding: 2rem 0;
+}
+
+/* Featured Review */
+.featured-review {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border: 10px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.featured-badge {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.featured-content {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.featured-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--card-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.featured-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.star {
+  color: var(--foreground);
+  font-size: 1rem;
+}
+
+.featured-excerpt {
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.featured-image {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+/* Section Headers */
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.section-divider {
+  width: 20rem;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+/* Review Grid */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+/* Review Cards */
+.review-card {
+  position: relative;
+  background-color: var(--card);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border: 2px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.overay {
+  position: absolute;
+  visibility: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  zoom: 1.2;
+
+  .overay {
+    background-color: rgba(245, 240, 225, 0.5);
+    visibility: visible;
+  }
+}
+
+.card-header {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-image {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+.card-info {
+  flex: 1;
+}
+
+.card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--card-foreground);
+  margin-bottom: 0.25rem;
+}
+
+.card-meta {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-excerpt {
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+/* About Section */
+.about-section {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 10px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.about-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--card-foreground);
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  color: var(--muted-foreground);
+  line-height: 1.7;
+  font-size: 1.125rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .featured-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .featured-image {
+    justify-self: center;
+  }
+
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* footer */
+.footer {
+  width: 380px;
+  height: 25px;
+  background-color: var(--border);
+  font-size: x-small;
+
+  border-radius: var(--radius);
+  border: 0.1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  display: flex;
+  justify-content: center;
+}
