@@ -1,10 +1,12 @@
 import React from "react";
-import Carts from "./components/Carts/Carts"
+import StringState from "./components/State/StringState";
+import NumberState from "./components/State/NumberState";
 
 export default function App() {
   return (
     <div>
-     <Carts></Carts>
+      {/* <StringState></StringState> */}
+      <NumberState></NumberState>
     </div>
   );
 }
