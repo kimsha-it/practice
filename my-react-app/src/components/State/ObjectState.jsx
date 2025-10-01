@@ -13,13 +13,15 @@ export default function ObjectState() {
   function increaseAge() {
     console.log("나이 증가");
     // 상태 업데이트 로직
-    let new2 = { ...user, age: age + 1 };
+    let new2 = { ...user, age: user.age + 1 };
     setUser(new2);
   }
 
   function resetUser() {
     console.log("사용자 정보 초기화");
     // 상태 업데이트 로직
+    let new3 = { name: "홍길동", age: 25 };
+    setUser(new3);
   }
 
   return (
@@ -30,13 +32,28 @@ export default function ObjectState() {
         <p className="text-lg">나이: {user.age}</p>
       </div>
       <div className="flex gap-2 flex-wrap justify-center">
-        <button className="bg-blue-500 text-white px-4 py-2 rounded">
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded"
+          onClick={() => {
+            updateName();
+          }}
+        >
           이름을 "김철수"로 업데이트
         </button>
-        <button className="bg-green-500 text-white px-4 py-2 rounded">
+        <button
+          className="bg-green-500 text-white px-4 py-2 rounded"
+          onClick={() => {
+            increaseAge();
+          }}
+        >
           나이 +1
         </button>
-        <button className="bg-gray-500 text-white px-4 py-2 rounded">
+        <button
+          className="bg-gray-500 text-white px-4 py-2 rounded"
+          onClick={() => {
+            resetUser();
+          }}
+        >
           초기화
         </button>
       </div>

@@ -1,12 +1,10 @@
 import React from "react";
-import StringState from "./components/State/StringState";
-import NumberState from "./components/State/NumberState";
+import FormContainer from "./components/Signup/FormContainer";
 
 export default function App() {
   return (
     <div>
-      {/* <StringState></StringState> */}
-      <NumberState></NumberState>
+      <FormContainer></FormContainer>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React from "react";
-import UserCard from "./UserCard/UserCard";
+import Counter from "./Counter/Counter";
 
 export default function Main() {
   return (
     <div>
-      <UserCard></UserCard>
+      <Counter></Counter>
     </div>
   );
 }
