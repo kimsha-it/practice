@@ -1,10 +1,10 @@
 import React from "react";
-import FormContainer from "./components/Signup/FormContainer";
+import Container from "./components/PostComments/Container";
 
 export default function App() {
   return (
     <div>
-      <FormContainer></FormContainer>
+      <Container></Container>
     </div>
   );
 }
